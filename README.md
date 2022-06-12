@@ -45,7 +45,7 @@ Some notes on shortcuts:
   - Super+Down: Upper-left corner (for those without a keypad)
   - Super+Keypad8/2: Upper/lower
   - Super+Keypad7/9/1/3: Corners
-- Meta+Space will open rofi as an application launcher.
+- Super+Space will open rofi as an application launcher.
 - Do mouse bindings count as shortcuts? Here are some useful ones:
   - Double-click titlebars to maximize/restore
   - Right-click titlebars to shade
