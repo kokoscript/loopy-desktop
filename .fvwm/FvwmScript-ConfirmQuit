@@ -1,0 +1,66 @@
+WindowTitle {ConfirmQuit}
+WindowSize  240 60
+Font "xft:Fixed:size=10:antialias=False"
+Init
+ Begin
+ End
+
+Widget 1
+Property
+ Title {End your X session?}
+ Size  240 30
+ Position 13 0
+ Type ItemDraw
+ Flags NoReliefString
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 2
+Property
+ Title {}
+ Icon images/icons/quit.png
+ Size 18 30
+ Position 42 0
+ Type ItemDraw
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 3
+Property
+ Title {Yes}
+ Size 60 16
+ Position 40 30
+ Flags NoReliefString
+ Type PushButton
+ Value 1
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Do {Quit}
+  End
+End
+
+Widget 4
+Property
+ Title {No}
+ Size 60 16
+ Position 140 30
+ Flags NoReliefString
+ Type PushButton
+ Value 1
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Quit
+  End
+End

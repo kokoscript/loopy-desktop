@@ -1,0 +1,60 @@
+! -- NEdit/XNEdit --
+! this kinda makes the file menu a bit ugly by adding unnecessary borders
+nedit*TopLevelShell*background: #444488
+nedit*XmNshadowThickness: 1
+nedit*ShadowThickness: 1
+nedit*XmNborderWidth: 1
+nedit*font: 6x13
+
+! -- URxvt --
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+! better scrolling for stuff like less, man, vim/nano, etc.
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+! reasonable keybindings for copy/paste (not working for me for some reason)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.font: 6x13,xft:PowerlineSymbols:size=9
+URxvt.italicFont: 6x13
+
+URxvt.background: #222244
+URxvt.foreground: #ffffff
+URxvt.color0: #2f2a68
+URxvt.color1: #f06191
+URxvt.color2: #63e99a
+URxvt.color3: #ffe666
+URxvt.color4: #61f2dc
+URxvt.color5: #b043d1
+URxvt.color6: #61f2dc
+URxvt.color7: #eeeeec
+URxvt.color8: #38337f
+URxvt.color9: #f06191
+URxvt.color10: #63e99a
+URxvt.color11: #ffe666
+URxvt.color12: #61f2dc
+URxvt.color13: #c573dd
+URxvt.color14: #61f2dc
+URxvt.color15: #ffffff
+URxvt.cursorColor: #f06191
+! you might want to change this
+URxvt.pixmap: ~/.config/fish/termbg.png;style=tiled
+
+URxvt.scrollBar_floating: 1
+URxvt.scrollBar_right: 1
+
+URxvt.perl-ext-common: matcher,tabbed,-confirm-paste
+
+! links
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.tabbed.tabbar-fg: 15
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 11
+URxvt.tabbed.tab-bg: 0
