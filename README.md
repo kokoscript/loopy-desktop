@@ -1,8 +1,8 @@
 # ![loopy-desktop](header.png)
 
-**Long intro: **loopy-desktop is a comprehensive IRIX-like, dark-purple-with-pink-and-cyan-accents desktop theme for fvwm3 and more. Its name comes from the [Casio Loopy game console](https://en.wikipedia.org/wiki/Casio_Loopy), of which the color scheme also came from.
+**Long intro:** loopy-desktop is a comprehensive IRIX-like, dark-purple-with-pink-and-cyan-accents desktop theme for fvwm3 and more. Its name comes from the [Casio Loopy game console](https://en.wikipedia.org/wiki/Casio_Loopy), of which the color scheme also came from.
 
-**Short intro: **These are my dotfiles.
+**Short intro:** These are my dotfiles.
 
 ![screenshot of loopy-desktop](screenshot.png)
 
