@@ -43,7 +43,7 @@ URxvt.color14: #61f2dc
 URxvt.color15: #ffffff
 URxvt.cursorColor: #f06191
 ! you might want to change this
-URxvt.pixmap: ~/.config/fish/termbg.png;style=tiled
+URxvt.pixmap: ~/.termbg.png;style=tiled
 
 URxvt.scrollBar_floating: 1
 URxvt.scrollBar_right: 1
