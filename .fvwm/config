@@ -217,6 +217,7 @@ AddToMenu   MenuFvwmRoot "Toolchest" Title
 + "&Programs%images/icons/apps.png%" Popup Programs
 + "&XTerm%images/icons/terminal.png%" Exec exec $[infostore.terminal]
 + "" Nop
+Piperead "hostnamectl | awk '{if (NR == 9) print }' | grep -q \"ThinkPad\"; if [ $? = 0 ]; then echo '+ \"ThinkPad Options%images/icons/tpad.png%\" Popup ThinkPadOptions'; echo '+ \"\" Nop'; fi"
 + "Fvwm&Console%images/icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
 + "&Wallpapers%images/icons/wallpaper.png%" Popup BGMenu
 + "Fvwm &help%images/icons/help.png%" Popup MenuFvwmManPages
@@ -366,6 +367,27 @@ AddToMenu   MenuFvwmManPages "Help" Title
 + "fvwm-menu-headlines" ViewManPage fvwm-menu-headlines
 + "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
 + "fvwm-config"         ViewManPage fvwm-config
+
+DestroyMenu ThinkPadOptions
+AddToMenu ThinkPadOptions "ThinkPad Options" Title
++ "Middle Mouse%images/icons/tpad-mmb.png%" Popup ThinkPadMiddleMouse
++ "Power Light%images/icons/light.png%" Popup ThinkPadPowerLight
++ "Lid Light%images/icons/tpad-lid.png%" Popup ThinkPadLidLight 
+
+DestroyMenu ThinkPadMiddleMouse
+AddToMenu ThinkPadMiddleMouse "Middle Mouse" Title
++ "Middle Mouse: Scroll%images/icons/tpad-mmb-scroll.png%"	Exec exec xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Scroll Method Enabled" 0, 0, 1 
++ "Middle Mouse: Click%images/icons/tpad-mmb.png%"		Exec exec xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Scroll Method Enabled" 0, 0, 0
+
+DestroyMenu ThinkPadPowerLight
+AddToMenu ThinkPadPowerLight "Power Light" Title
++ "Power Light: On%images/icons/light.png%"	Exec exec light -s sysfs/leds/tpacpi::power -S 1
++ "Power Light: Off%images/icons/light-off.png%"		Exec exec light -s sysfs/leds/tpacpi::power -S 0
+
+DestroyMenu ThinkPadLidLight
+AddToMenu ThinkPadLidLight "Lid Light" Title
++ "Lid Light: On%images/icons/tpad-lid.png%"	Exec exec light -s sysfs/leds/tpacpi::lid_logo_dot -S 1
++ "Lid Light: Off%images/icons/tpad-lid-off.png%"	Exec exec light -s sysfs/leds/tpacpi::lid_logo_dot -S 0
 
 #######
 # 5: Mouse and Key bindings
