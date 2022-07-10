@@ -1,5 +1,5 @@
 #!/bin/bash
 temp=$(curl -sL wttr.in/\?format\="%c%t\n")
 if [ "$temp" != "" ]; then
-	echo $temp > weather
+echo $temp > ~/.scripts/weather
 fi

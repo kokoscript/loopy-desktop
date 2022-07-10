@@ -244,6 +244,7 @@ AddToMenu   SessionMenu "Leave Session" Title
 DestroyMenu BGMenu
 AddToMenu   BGMenu "Wallpapers" Title
 + "IRIX Wallpapers%images/background/ess-gee-eye.png%" Popup BGMenu-IRIX
++ "Abstrakt%images/background/abstrakt-icon.png%" SetBG abstrakt.png
 + "Metal%images/background/bg1.png%" SetBG bg1.png
 + "Metal Dark%images/background/bg1-dark.png%" SetBG bg1-dark.png
 + "Metal Darker%images/background/bg1-darker.png%" SetBG bg1-darker.png
