@@ -17,6 +17,7 @@ Feel free to use alternatives, but keep in mind not all programs will use the st
 - Shell: fish (see notes)
 - Dock/Panel: xfce4-panel (I use the docklike plugin)
 - Launcher: rofi
+- Notifications: dunst
 - File manager: PCManFM or Thunar
 - Text editor: XNEdit
 - Applying themes: lxappearance and qt5ct
