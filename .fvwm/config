@@ -102,6 +102,11 @@ AddToFunc   ToggleTitle
 # 2: Styles #
 #############
 
+CursorStyle ROOT         left_ptr
+CursorStyle TITLE        left_ptr
+CursorStyle DEFAULT      left_ptr
+CursorStyle MENU      left_ptr
+
 DesktopName 0 Main
 DesktopSize 1x1
 
