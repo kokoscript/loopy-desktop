@@ -430,6 +430,7 @@ Silent Key F1 A 4 Menu MenuFvwmRoot
 Silent Key XF86MonBrightnessDown A A Exec exec light -U 2
 Silent Key XF86MonBrightnessUp A A Exec exec light -A 2
 Silent Key XF86Favorites A A Exec exec $[infostore.terminal]
+Silent Key l A 4 Exec exec ~/.fvwm/onLock.sh
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #   1 - Open the WindowOps menu.
