@@ -162,6 +162,12 @@ Style ConfirmReboot !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style ConfirmShutdown !Title, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
 
+Style "jetbrains-idea" ClickToFocus, Lenience
+
+Style "Steam*" !UsePPosition
+Style "Steam*" !UseUSPosition, FixedPPosition
+Style "Steam*" !Title
+
 #######
 # 3: Colorsets
 #
@@ -438,7 +444,7 @@ Silent Key l A 4 Exec exec ~/.fvwm/onLock.sh
 #   4 - Maximize (right/middle button will only maximize vertical/horizontal)
 #   6 - Iconify (minimize)
 Mouse 1 2 A Menu MenuWindowOps Delete
-Mouse 1 1 A Close
+Mouse 1 1 A Delete
 Mouse 1 3 A Maximize 100 100
 Mouse 2 3 A Maximize 0 100
 Mouse 3 3 A Maximize 100 0
