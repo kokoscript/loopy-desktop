@@ -150,5 +150,4 @@ I swear I have a version of loopy for Kaleidoscope ready to go, I've just never 
 
 ### ...but I'm on Haiku! :\(
 
-I made a version of loopy on Haiku at some point, then deleted the partition it was on. I'll remake it eventually
-
+[Loopy for Haiku!](https://github.com/kokoscript/loopy-haiku)
