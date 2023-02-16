@@ -30,7 +30,7 @@ loopy-desktop practically revolves around fvwm3; if you want to use a different 
 
 The config included here is the one I use on a daily basis, so you might want to change a few things.
 
-- All virtual desktop features have been removed; if you rely on that, you'll need to add it all back in by comparing with fvwm's default config.
+- Nearly all virtual desktop features have been removed; if it's something you rely on, you'll need to add it all back in by comparing with fvwm's default config.
 - Some of the Platinum sound effects from MacOS have been added, and require mpg123 to be played. If you hate the idea of sound effects, comment out the following:
   - In StartFunction, `+ I Module FvwmEvent EventSounds`
   - In RaiseMoveX, `+ M PlaySound windowMoveDone.mp3`
@@ -62,7 +62,7 @@ Some Qt-based programs won't have the theme applied right away. You'll need to l
 
 ### rxvt-unicode
 
-Copy `.Xresources` and `.termBG.png` over to your home directory. Run `xrdb ~/.Xresources` to apply.
+Copy `.Xresources`, `.termBG.png`, and `.urxvt` over to your home directory. Run `xrdb ~/.Xresources` to apply.
 
 ### XNEdit
 

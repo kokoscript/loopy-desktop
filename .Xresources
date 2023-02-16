@@ -1,9 +1,17 @@
 ! -- NEdit/XNEdit --
-! this kinda makes the file menu a bit ugly by adding unnecessary borders
+! fix colors, bump border shadow size down to 1px
+nedit*XmText.Foreground: #ffffff
+nedit*XmTextField.Foreground: #ffffff
+nedit*XmList.Foreground: #ffffff
 nedit*TopLevelShell*background: #444488
-nedit*XmNshadowThickness: 1
+nedit*XmPushButton.MarginWidth: 7
+nedit*XmPushButton.MarginHeight: 5
+nedit*XmToggleButton.MarginWidth: 5
+nedit*XmToggleButton.MarginHeight: 3
 nedit*ShadowThickness: 1
-nedit*XmNborderWidth: 1
+nedit*TopShadowColor: #6e6ec3
+nedit*BottomShadowColor: #222244
+nedit*XmForm.ShadowThickness: 0
 nedit*font: 6x13
 
 ! -- URxvt --
@@ -13,8 +21,9 @@ URxvt*scrollTtyKeypress: true
 ! better scrolling for stuff like less, man, vim/nano, etc.
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
+URxvt.saveLines: 99999
 
-! reasonable keybindings for copy/paste (not working for me for some reason)
+! reasonable keybindings for copy/paste
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.iso14755: false
@@ -42,13 +51,13 @@ URxvt.color13: #c573dd
 URxvt.color14: #61f2dc
 URxvt.color15: #ffffff
 URxvt.cursorColor: #f06191
-! you might want to change this
+! youll want to change this
 URxvt.pixmap: ~/.termbg.png;style=tiled
 
 URxvt.scrollBar_floating: 1
 URxvt.scrollBar_right: 1
 
-URxvt.perl-ext-common: matcher,tabbed,-confirm-paste
+URxvt.perl-ext-common: default,matcher,tabbed,-confirm-paste,vtewheel
 
 ! links
 URxvt.url-launcher: /usr/bin/xdg-open

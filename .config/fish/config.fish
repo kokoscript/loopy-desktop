@@ -6,11 +6,21 @@ function sudo
     end
 end
 
+function fish_title
+    if [ $_ = 'fish' ]
+        echo (prompt_pwd -d 0)
+    else
+        echo $argv
+    end
+end
+
 if status is-interactive
+	fish_add_path ~/.scripts
     printf '\n%.0s' (seq 100)
     alias clear="clear && printf '\n%.0s' (seq 100)"
     alias c="printf '\n%.0s' (seq 100)"
-
+	alias l='ls'
+	alias s='sudo'
     ~/.scripts/motd.sh
 end
 

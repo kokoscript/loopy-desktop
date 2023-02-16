@@ -109,6 +109,7 @@ CursorStyle MENU      left_ptr
 
 DesktopName 0 Main
 DesktopSize 1x1
+EdgeScroll 0 0
 
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen that will not
@@ -228,7 +229,7 @@ AddToMenu   MenuFvwmRoot "Toolchest" Title
 + "&Programs%images/icons/apps.png%" Popup Programs
 + "&XTerm%images/icons/terminal.png%" Exec exec $[infostore.terminal]
 + "" Nop
-Piperead "hostnamectl | awk '{if (NR == 9) print }' | grep -q \"ThinkPad\"; if [ $? = 0 ]; then echo '+ \"ThinkPad Options%images/icons/tpad.png%\" Popup ThinkPadOptions'; echo '+ \"\" Nop'; fi"
+Piperead "hostnamectl | awk '{if (NR == 10) print }' | grep -q \"ThinkPad\"; if [ $? = 0 ]; then echo '+ \"ThinkPad Options%images/icons/tpad.png%\" Popup ThinkPadOptions'; echo '+ \"\" Nop'; fi"
 + "Fvwm&Console%images/icons/terminal.png%" Module FvwmConsole -terminal $[infostore.terminal]
 + "&Wallpapers%images/icons/wallpaper.png%" Popup BGMenu
 + "Fvwm &help%images/icons/help.png%" Popup MenuFvwmManPages
@@ -265,6 +266,7 @@ AddToMenu   BGMenu "Wallpapers" Title
 + "Traitor! Dark%images/background/bg-sun-dark.png%" SetBG bg-sun-dark.png
 + "Traitor!x2%images/background/bg-sun2x.png%" SetBG bg-sun2x.png
 + "Traitor!x2 Dark%images/background/bg-sun2x-dark.png%" SetBG bg-sun2x-dark.png
++ "Iso%images/background/iso.png%" SetBG iso.png
 
 DestroyMenu BGMenu-IRIX
 AddToMenu   BGMenu-IRIX "IRIX" Title
@@ -309,6 +311,7 @@ AddToMenu   MenuWindowOps
 + "Iconify"   Iconify
 + "Maximize"  Maximize
 + "Shade"     WindowShade
++ "Move to..." Popup MenuSendTo
 + "" Nop
 + "Close"     Close
 + "More..."   Menu MenuWindowOpsLong This 0 0
@@ -320,6 +323,7 @@ AddToMenu   MenuWindowOpsLong
 + "(De)Iconify"         Iconify
 + "(Un)Maximize"        Maximize
 + "(Un)Shade"           WindowShade
++ "Move to..."			Popup MenuSendTo
 + "" Nop
 + "Close"               Close
 + "Destroy"             Destroy
@@ -338,7 +342,7 @@ AddToMenu   MenuIconOps
 + "(De)Iconify"         Iconify
 + "(Un)Maximize"        Maximize
 + "(Un)Shade"           WindowShade
-# virtual desktop commands would be here
++ "Move to..."			Popup MenuSendTo
 + "" Nop
 + "Close"               Close
 + "Destroy"             Destroy
@@ -351,6 +355,11 @@ AddToMenu   MenuIconOps
 + "StaysOnBottom"       Pick (CirculateHit) Layer 0 2
 + "" Nop
 + "Identify"            Module FvwmIdent
+
+DestroyMenu MenuSendTo
+AddToMenu MenuSendTo
++ "Main" MoveToDesk 0 0
++ "Second" MoveToDesk 0 1
 
 # Fvwm Man Pages (Help) Menu
 DestroyMenu MenuFvwmManPages
@@ -428,7 +437,9 @@ AddToMenu ThinkPadLidLight "Lid Light" Title
 # Silent supresses any errors (such as keyboards with no Menu key).
 Silent Key F1 A M Menu MenuFvwmRoot
 Silent Key Menu A A Menu MenuFvwmRoot
-Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
+#Silent Key Tab A M WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
+# Alt-tab more in-line with windows/macos
+Silent Key Tab A M WindowList Root c c CurrentDesk, NoGeometry, CurrentAtEnd
 Silent Key Super_R A A Exec exec $[infostore.terminal]
 Silent Key Print A A Exec flameshot gui
 # laptop
@@ -437,6 +448,8 @@ Silent Key XF86MonBrightnessDown A A Exec exec light -U 2
 Silent Key XF86MonBrightnessUp A A Exec exec light -A 2
 Silent Key XF86Favorites A A Exec exec $[infostore.terminal]
 Silent Key l A 4 Exec exec ~/.fvwm/onLock.sh
+Silent Key 1 A 4 GotoDesk 0 0
+Silent Key 2 A 4 GotoDesk 0 1
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
 #   1 - Open the WindowOps menu.
@@ -636,3 +649,10 @@ AddToFunc DeThumbnail
 + I PipeRead "echo WindowStyle Icon \\$\\[Icon-$[w.id]\\]"
 + I UnsetEnv Icon-$[w.id]
 + I Exec rm -f $[HOME]/.fvwm/icon.tmp.$[w.id].png
+
+# leave cursor alone when alt-tabbing (thx https://www.shuangrimu.com/posts/fvwm-and-alt-tab.html)
+DestroyFunc WindowListFunc
+AddToFunc WindowListFunc
++ I Iconify off
++ I FlipFocus
++ I Raise
