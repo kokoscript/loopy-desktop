@@ -19,7 +19,7 @@ Feel free to use alternatives, but keep in mind not all programs will use the st
 - Launcher: rofi
 - Notifications: dunst
 - File manager: PCManFM or Thunar
-- Text editor: XNEdit
+- Text editor: XNEdit *(use gtk2-engines-pixbuf)*
 - Applying themes: lxappearance and qt5ct
 
 ## Install Notes
