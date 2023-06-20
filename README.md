@@ -19,7 +19,7 @@ Feel free to use alternatives, but keep in mind not all programs will use the st
 - Launcher: rofi
 - Notifications: dunst
 - File manager: PCManFM or Thunar
-- Text editor: XNEdit *(use gtk2-engines-pixbuf)*
+- Text editor: XNEdit
 - Applying themes: lxappearance and qt5ct
 
 ## Install Notes
@@ -90,9 +90,11 @@ loopy-desktop uses a modified version of the [Redmond97 theme](https://github.co
 
 1. Install imagemagick.
 2. Clone the [Redmond97 repository](https://github.com/matthewmx86/Redmond97) locally.
-3. In Extras/Theme_Builder/base.tar.gz, edit /gtk-3.0/settings.ini, clearing the value of `gtk-icon-theme-name` (keeping the var name and equals sign, in other words just erase `Windows95`). You might also need to remove the line containing `IconTheme=` in /index.theme if the icons still end up broken.
+3. In Extras/Theme_Builder/base.tar.gz, edit /gtk-3.0/settings.ini, remove the line starting with `gtk-icon-theme-name`. In /index.theme, remove the line starting with `IconTheme=`.
 4. In Extras/Theme_Builder, delete theme.conf and replace it with the one in this repository, renaming as necessary.
 5. In the same directory, run `gen_theme.sh`. Use lxappearance to set the theme.
+
+**Note:** Many applications won't look correct until you install gdk2-engines-pixbuf, or your distro's equivalent package.
 
 ### Fonts
 
@@ -110,9 +112,11 @@ You *technically* already have all of the fonts needed, provided you have xfonts
 - Move the .otb files you've just created to the appropriate locations. For example, `helvR12.otb` would go in `/usr/share/fonts/X11/75dpi`, and `6x13.otb` would go in `/usr/share/fonts/X11/misc`.
 - Run `sudo fc-cache -fv`
 
+**Note:** You can also batch convert every font containing 'helv' with some very light bash/fontforge scripting. This'll give you many more options for font sizes, but it isn't required. Same goes for a lot of the X11 misc fixed fonts, but you may need to do those one at a time (otherwise you'll end up with *a lot* of symbol fonts). In the future, I may add a small helper script to complete this step.
+
 Then use lxappearance to set the font to "Helvetica Medium 9", and qt5ct to set the general font to the same. qt5ct also has a setting for the fixed width font; set that to "Fixed", with whatever size you'd like (based on which fixed width fonts you ended up converting).
 
-Though the system generally uses the bitmap fonts in places that make sense, there's sometimes a bit of leakage; for example, web browsers will continue to render pages as intended with proper font anti-aliasing, but will disable it for text that's to be rendered with Helvetica. It's not that big of a problem though, as web designers seem to be getting tired of it.
+Though the system generally uses the bitmap fonts in places that make sense, there's sometimes a bit of leakage; for example, web browsers will continue to render pages as intended with proper font anti-aliasing, but will disable it for text that's to be rendered with Helvetica. It's not that big of a problem though, as web designers seem to be getting tired of it. If you *do* want Firefox to use bitmap fonts in pages, check Settings for the "Fonts" subheading, and click "Advanced...". There you can set your sans-serif font to Helvetica, and your monospace font to Fixed. (One of the fonts in X11's misc fonts provides Times, so you can use that for the serif font once you've converted it to otb.)
 
 ### Firefox
 
