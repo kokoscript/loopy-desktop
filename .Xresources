@@ -51,7 +51,7 @@ URxvt.color13: #c573dd
 URxvt.color14: #61f2dc
 URxvt.color15: #ffffff
 URxvt.cursorColor: #f06191
-! youll want to change this
+! you may need to change this to an absolute path in case the bg doesn't show up
 URxvt.pixmap: ~/.termbg.png;style=tiled
 
 URxvt.scrollBar_floating: 1
