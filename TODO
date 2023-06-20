@@ -1,0 +1,3 @@
+- Merge fvwm config with the compact version currently on deepslate, make it an easy toggle
+- Merge fvwm config with the version currently on cmdblock (meta+mouse drags windows like in GNOME)
+- Investigate why some Qt programs are extremely wide (config bug? fvwm bug? qt bug?)
