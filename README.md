@@ -10,12 +10,12 @@ Please read through this entire README before applying parts of the theme. Issue
 
 ## Recommended Programs
 
-Feel free to use alternatives, but keep in mind not all programs will use the standard GTK/Qt themes and require manual theming. If you make a theme for a program not covered by loopy-desktop, feel free to make a PR.
+Feel free to use alternatives, but keep in mind not all programs will use the standard GTK/Qt themes and may require manual theming. If you create a theme for a program not covered by loopy-desktop, feel free to make a PR.
 
 - Window manger: fvwm3 (see notes)
 - Terminal: rxvt-unicode
 - Shell: fish (see notes)
-- Dock/Panel: xfce4-panel (I use the docklike plugin)
+- Dock/Panel: xfce4-panel (plus [xfce4-panel-docklike-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin/))
 - Launcher: rofi
 - Notifications: dunst
 - File manager: PCManFM or Thunar
@@ -136,7 +136,7 @@ If you end up using Papirus, use the `papirus-folders` tool and play around with
 
 ### Cursors
 
-To revert to the basic X11 cursors, edit `~/.icons/default/index.theme`, clearing out the value after `Inherits=`. Do the same with `~/.config/gtk-3.0/settings.ini`, but with the `gtk-cursor-theme-name` variable. You'll need to do this *after* you've finished using lxappearance, otherwise the cursors will be reset to the system default.
+To revert to the basic X11 cursors, edit `~/.icons/default/index.theme`, clearing out the value after `Inherits=`. Do the same with `~/.config/gtk-3.0/settings.ini`, but with the `gtk-cursor-theme-name` variable. **You'll need to do this *after* you've finished using lxappearance, otherwise cursors will be reset to the system default.**
 
 In the case that the basic X11 cursors *still* don't show up, edit the .theme files in `/etc/X11/cursors`, clearing the value of `Inherits` for each as before.
 
