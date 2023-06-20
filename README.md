@@ -15,7 +15,7 @@ Feel free to use alternatives, but keep in mind not all programs will use the st
 - Window manger: fvwm3 (see notes)
 - Terminal: rxvt-unicode
 - Shell: fish (see notes)
-- Dock/Panel: xfce4-panel (plus [xfce4-panel-docklike-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin/))
+- Dock/Panel: xfce4-panel (plus [xfce4-docklike-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin/))
 - Launcher: rofi
 - Notifications: dunst
 - File manager: PCManFM or Thunar
