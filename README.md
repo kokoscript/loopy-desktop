@@ -98,7 +98,7 @@ loopy-desktop uses a modified version of the [Redmond97 theme](https://github.co
 
 You *technically* already have all of the fonts needed, provided you have xfonts-base and xfonts-75dpi installed (with the exception of HCP Maru Gothic, which I used for xsecurelock). There's a bit more setup involved to get them available to most applications, though;
 
-- Remove `/usr/fonts/conf.d/70-no-bitmaps.conf`, or whatever the equivalent is in your distro.
+- Remove `/etc/fonts/conf.d/70-no-bitmaps.conf`, or whatever the equivalent is in your distro.
 - Use fontforge to convert the following fonts to .otb. Save them somewhere in your home directory.
   - `/usr/share/fonts/X11/75dpi/helvR12.pcf.gz`, `/usr/share/fonts/X11/75dpi/helvR14.pcf.gz`
     - You could do the rest of the sizes, but I've found these two work well enough for most cases.
