@@ -140,6 +140,10 @@ To revert to the basic X11 cursors, edit `~/.icons/default/index.theme`, clearin
 
 In the case that the basic X11 cursors *still* don't show up, edit the .theme files in `/etc/X11/cursors`, clearing the value of `Inherits` for each as before.
 
+### WINE programs
+
+Wine can make use of older Windows themes through `winecfg`. A [version of the Loopy colorscheme I made for Windows](https://kokoscript.com/depot/themes/kokoscript-loopy.Theme) appears to work nicely with it. Once you've downloaded it, open the "Desktop Integration" tab, click "Install Theme...", and browse to the theme file. 
+
 ## That's it!
 
 If you have any suggestions or problems (**after reading everything here**), feel free to open an issue. If you have any *improvements*, feel free to open a PR. Comments can be left anywhere that isn't the issues page. Please.
