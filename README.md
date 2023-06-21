@@ -12,15 +12,15 @@ Please read through this entire README before applying parts of the theme. Issue
 
 Feel free to use alternatives, but keep in mind not all programs will use the standard GTK/Qt themes and may require manual theming. If you create a theme for a program not covered by loopy-desktop, feel free to make a PR.
 
-- Window manger: fvwm3 (see notes)
-- Terminal: rxvt-unicode
-- Shell: fish (see notes)
-- Dock/Panel: xfce4-panel (plus [xfce4-docklike-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin/))
-- Launcher: rofi
-- Notifications: dunst
-- File manager: PCManFM or Thunar
-- Text editor: XNEdit
-- Applying themes: lxappearance and qt5ct
+- **Window manger:** fvwm3 (see notes)
+- **Terminal:** rxvt-unicode
+- **Shell:** fish (see notes)
+- **Dock/Panel:** xfce4-panel (plus [xfce4-docklike-plugin](https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin/))
+- **Launcher:** rofi
+- **Notifications:** dunst
+- **File manager:** PCManFM or Thunar
+- **Text editor:** XNEdit
+- **Theme applicators:** lxappearance + qt5ct
 
 ## Install Notes
 
@@ -41,12 +41,12 @@ The config included here is the one I use on a daily basis, so you might want to
 Some notes on shortcuts:
 
 - Since screen-edge-resizing (I refuse to call it "Aero Snap", okay?) isn't really a thing in FVWM, I've set up a sort-of tiling system via the arrow keys/keypad. All shortcuts will toggle between the desired shape and the window's original shape.
-  - Super+Left/Right or Keypad4/6: Left/right sides
-  - Super+Up or Keypad5: Maximize
-  - Super+Down: Upper-left corner (for those without a keypad)
-  - Super+Keypad8/2: Upper/lower
-  - Super+Keypad7/9/1/3: Corners
-- Super+Space will open rofi as an application launcher.
+  - **Super+Left/Right or Keypad4/6:** Left/right sides
+  - **Super+Up or Keypad5:** Maximize
+  - **Super+Down:** Upper-left corner (for those without a keypad)
+  - **Super+Keypad8/2:** Upper/lower
+  - **Super+Keypad7/9/1/3:** Corners
+- **Super+Space** will open rofi as an application launcher.
 - Do mouse bindings count as shortcuts? Here are some useful ones:
   - Double-click titlebars to maximize/restore
   - Right-click titlebars to shade
@@ -62,17 +62,17 @@ Some Qt-based programs won't have the theme applied right away. You'll need to l
 
 ### rxvt-unicode
 
-Copy `.Xresources`, `.termBG.png`, and `.urxvt` over to your home directory. Run `xrdb ~/.Xresources` to apply.
+Copy `.Xresources`, `.termBG.png`, and `.urxvt` to your home directory. Run `xrdb ~/.Xresources` to apply.
 
 ### XNEdit
 
-[XNEdit](https://github.com/unixwork/xnedit) is a somewhat-modern fork of NEdit. To apply the theme, copy `.Xresources` and `.xnedit` to your home directory. Run `xrdb ~/.Xresources` to apply, if you haven't already.
+[XNEdit](https://github.com/unixwork/xnedit) is a somewhat-modern fork of NEdit. Its predecessor's life as the default IRIX text editor helps it fit nicely into loopy-desktop. To apply the theme, copy `.Xresources` and `.xnedit` to your home directory. Run `xrdb ~/.Xresources` to apply, if you haven't already.
 
 ### Fish
 
 I actually don't know why I made this a part of loopy-desktop. I guess I was anticipating people asking for my shell setup?
 
-Anyway, you'll need Fish along with the [Tide](https://github.com/IlanCosman/tide) prompt. Copy the contents of `.config/fish` over once you're done installing that. You'll also need to copy over `.scripts` to your home directory for the MOTD and weather scripts; add a cronjob to run `weather.sh` every hour.
+Anyway, you'll need Fish along with the [Tide](https://github.com/IlanCosman/tide) prompt. Copy the contents of `.config/fish` over once you've finished installing that. You'll also need to copy over `.scripts` to your home directory for the MOTD and weather scripts; add a cronjob to run `weather.sh` every hour.
 
 If you don't want to switch over to Fish and are currently using Zsh, check out [powerlevel10k](https://github.com/romkatv/powerlevel10k). Although it's a bit... *much*, you should be able to configure the prompt to look like the one in the screenshot.
 
